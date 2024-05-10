@@ -4,6 +4,8 @@
 >
 > - [Effective Software Design](https://effectivesoftwaredesign.com/2012/02/05/separation-of-concerns/)
 
+let me make an observation
+
 - [Learning Objectives](#learning-objectives)
 - [Getting Started](#getting-started)
 - [Study Tips](#study-tips)
