@@ -1,4 +1,4 @@
-import { stateList } from './words-list.js';
+import { wordsList } from './words-list.js';
 
 describe('wordsList renders an array of strings into an unordered list', () => {
   describe('an empty array becomes an empty list', () => {

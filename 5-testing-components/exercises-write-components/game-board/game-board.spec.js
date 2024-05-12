@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { gameBaord } from './game-board.js';
+import { gameBoard } from './game-board.js';
 
 describe('gameBaord: renders a list of user screen names and real names', () => {
   describe('tictactoe: X won on the middle column', () => {
@@ -11,7 +11,7 @@ describe('gameBaord: renders a list of user screen names and real names', () => 
       ['X', 'X', 'O'],
       ['O', 'X', 'O'],
     ];
-    const actual = gameBaord(boardData);
+    const actual = gameBoard(boardData);
 
     testGameBoard(actual, boardData);
   });
@@ -25,7 +25,7 @@ describe('gameBaord: renders a list of user screen names and real names', () => 
       ['', ''],
       ['', ''],
     ];
-    const actual = gameBaord(boardData);
+    const actual = gameBoard(boardData);
 
     testGameBoard(actual, boardData);
   });
@@ -35,7 +35,7 @@ describe('gameBaord: renders a list of user screen names and real names', () => 
       ['p', 'l', 'a', 'y'],
       ['b', 'a', 'l', 'l'],
     ];
-    const actual = gameBaord(boardData);
+    const actual = gameBoard(boardData);
 
     testGameBoard(actual, boardData);
   });
@@ -68,7 +68,7 @@ function testGameBoard(actual, boardData) {
             expect(actualChildChild.tagName).toEqual('TD');
           });
           it(`has innerText: "${filler}"`, () => {
-            expect(actualChildChild.innerText).toEqual(filler);
+            expect(actualChildChild.innerHTMl).toEqual(filler);
           });
           it(`has childElementCount: 0`, () => {
             expect(actualChildChild.childElementCount).toEqual(0);
