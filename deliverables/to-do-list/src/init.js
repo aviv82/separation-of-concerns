@@ -1,0 +1,19 @@
+import { state } from '../data/state.js';
+import { createContainer } from './components/container.js';
+import { addItemHandler } from './handlers/addItemHandler.js';
+import { addItemListener } from './listeners/addItemListener.js';
+
+// step 1: create a basic 'root' div element and append to the body (can this be refactored to a component file?)
+
+const root = document.createElement('div');
+root.id = 'root';
+root.classList = 'root';
+document.body.appendChild(root);
+
+// step 2: call component method to create 'container/wrapper' element with input field and list display sections
+
+createContainer();
+
+// step 3: call listeners (we can provide the arguments for the listener parameters from the init call)
+
+addItemListener('input-btn', addItemHandler);
