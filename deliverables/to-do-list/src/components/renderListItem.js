@@ -1,3 +1,4 @@
+import { renderButtonsSection } from './renderButtonsSection.js';
 import { renderCheckBox } from './renderCheckBox.js';
 import { renderLabel } from './renderLabel.js';
 
@@ -9,14 +10,17 @@ export const renderListItem = (item, index) => {
 
   // call render checkbox and label elements to be appended into item
 
-  // call render check box component
   const checkBox = renderCheckBox(item, index);
-
   const label = renderLabel(item, index);
+
+  // call render buttons section to be appended to list item
+
+  const buttonsSection = renderButtonsSection(index);
 
   // append child elements to list item
   li.appendChild(checkBox);
   li.appendChild(label);
+  li.appendChild(buttonsSection);
 
   return li;
 };
