@@ -1,6 +1,6 @@
 import { renderEditItemInterface } from '../components/renderEditItemInterface.js';
 
-export const openEditItemModalHandler = (event) => {
+export const openEditModalHandler = (event) => {
   // this handler is responsible to toggling on the modal.
   // not actually handling the edit item logic.
   // there will be a separate handler to take care of that.

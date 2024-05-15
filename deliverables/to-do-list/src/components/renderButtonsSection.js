@@ -1,4 +1,5 @@
-import { editButtonListener } from '../listeners/editButtonListener.js';
+import { openDeleteModalListener } from '../listeners/openDeleteModalListener.js';
+import { openEditModalListener } from '../listeners/openEditModalListener.js';
 
 export const renderButtonsSection = (index) => {
   // this component will create two button elements inside a separate div; 'edit' and 'delete'.
@@ -14,12 +15,20 @@ export const renderButtonsSection = (index) => {
   editButton.classList = 'edit-btn';
   editButton.innerHTML = 'Edit';
 
+  // create 'delete' button
+  const deleteButton = document.createElement('button');
+  deleteButton.id = `${index + 1}`;
+  deleteButton.classList = 'delete-btn';
+  deleteButton.innerHTML = 'Delete';
+
   // add button listeners
   // !!! NOTICE: these listeners handle toggling on the modal, NOT the actual 'edit'/'delete' item logic  !!!
-  editButtonListener(editButton);
+  openEditModalListener(editButton);
+  openDeleteModalListener(deleteButton);
 
   // append buttons to button section and return
   buttonDiv.appendChild(editButton);
+  buttonDiv.appendChild(deleteButton);
 
   return buttonDiv;
 };
