@@ -18,6 +18,12 @@ export const editItemHandler = (event) => {
   // handle edit logic
   editListItem(input.value, index);
 
+  const modalAlert = document.getElementById('modal-alert-section');
+
   // close modal
-  closeModalHandler();
+  if (modalAlert.classList.contains('expand')) {
+    input.value = '';
+  } else {
+    closeModalHandler();
+  }
 };

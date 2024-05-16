@@ -1,4 +1,6 @@
 import { state } from '../../data/state.js';
+import { ALERTS } from '../../data/constants.js';
+import { renderAlert } from '../components/renderAlert.js';
 import { renderList } from '../components/renderList.js';
 
 export const addItemToList = (itemToAdd) => {
@@ -11,7 +13,12 @@ export const addItemToList = (itemToAdd) => {
   const doubleValues = state.itemList.filter((item) => item === itemToAdd);
 
   if (doubleValues.length > 0) {
-    throw new Error('This item already exists in the list');
+    // alert user if the item they want to add already exists in the list
+    const alertSection = document.getElementById('alert-section');
+    const alertBody = renderAlert(ALERTS.ITEM_ALREADY_EXISTS);
+    alertSection.appendChild(alertBody);
+    alertSection.classList.add('expand');
+    return;
   }
 
   // update state

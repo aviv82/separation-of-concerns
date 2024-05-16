@@ -1,4 +1,5 @@
 import { state } from '../../data/state.js';
+import { modalInputFocusHandler } from '../handlers/modalInputFocusHandler.js';
 import { renderEditModalButtonsSection } from './renderEditModalButtonsSection.js';
 
 export const renderEditItemInterface = (index) => {
@@ -25,6 +26,13 @@ export const renderEditItemInterface = (index) => {
   editInput.id = 'edit-input';
   editInput.type = 'text';
 
+  editInput.addEventListener('focus', modalInputFocusHandler);
+
+  // create alert section, where messages can be displayed to the user
+  const alertSection = document.createElement('div');
+  alertSection.classList = 'modal-alert-section';
+  alertSection.id = 'modal-alert-section';
+
   // !!! NOTICE: did you notice how many of these components and elements could be reused instead of recreated? !!!
 
   // call component method to create button section.
@@ -35,6 +43,7 @@ export const renderEditItemInterface = (index) => {
   editItemInterface.appendChild(editHead);
   editItemInterface.appendChild(editParagraph);
   editItemInterface.appendChild(editInput);
+  editItemInterface.appendChild(alertSection);
   editItemInterface.appendChild(modalButtonsSection);
 
   return editItemInterface;

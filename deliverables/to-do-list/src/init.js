@@ -1,8 +1,9 @@
-import { state } from '../data/state.js';
 import { createContainer } from './components/container.js';
 import { modal } from './components/modal.js';
 import { addItemHandler } from './handlers/addItemHandler.js';
+import { inputFocusHandler } from './handlers/inputFocusHandler.js';
 import { addItemListener } from './listeners/addItemListener.js';
+import { inputFocusListener } from './listeners/inputFocusListener.js';
 
 // step 1: create a basic 'root' div element and append to the body (can this be refactored to a component file?)
 
@@ -24,3 +25,4 @@ modal();
 // step 4: call listeners (we can provide the arguments for the listener parameters from the init call)
 
 addItemListener('input-btn', addItemHandler);
+inputFocusListener('input-field', inputFocusHandler);

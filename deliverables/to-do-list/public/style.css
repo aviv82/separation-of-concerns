@@ -43,6 +43,24 @@ body {
   align-items: center;
 }
 
+.alert-section,
+.modal-alert-section {
+  width: 240px;
+  height: 60px;
+  margin: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+
+  display: none;
+}
+
+.expand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .list-base {
   list-style: none;
   min-width: 400px;

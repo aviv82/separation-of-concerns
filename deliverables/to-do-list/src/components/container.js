@@ -32,6 +32,11 @@ export const createContainer = () => {
   inputSection.appendChild(inputField);
   inputSection.appendChild(inputButton);
 
+  // create alert section, where messages can be displayed to the user
+  const alertSection = document.createElement('div');
+  alertSection.classList = 'alert-section';
+  alertSection.id = 'alert-section';
+
   // create a display section including empty list of items for display
   const listDisplaySection = document.createElement('div');
   listDisplaySection.classList = 'display-section';
@@ -47,6 +52,7 @@ export const createContainer = () => {
   // append sections to container element
   container.appendChild(header);
   container.appendChild(inputSection);
+  container.appendChild(alertSection);
   container.appendChild(listDisplaySection);
 
   // append container element to root
